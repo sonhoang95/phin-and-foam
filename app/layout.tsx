@@ -31,7 +31,7 @@ const bodyFont = localFont({
 export const metadata: Metadata = {
   title: "Phin & Foam | Vietnamese Coffee",
   description:
-    "Vietnamese roots. Austin soul. Meet your daily coffee ritual with Phin & Foam House Blend and a traditional phin.",
+    "Vietnamese coffee, good company. Find upcoming Phin & Foam drops and pop-ups in North Austin, or inquire about catering for your next event.",
 };
 
 export default function RootLayout({

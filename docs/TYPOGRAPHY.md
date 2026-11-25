@@ -1,10 +1,9 @@
 # Brand typography
 
-- **Display:** Fraunces, variable roman and true italic. Headings use 550–650 weight, a softness setting of 65, and expressive alternate forms. Hero italics use softness 85.
-- **Body and interface:** DM Sans, variable roman. Used for navigation, recipes, order details, labels, and buttons.
-- Preserve the compact existing wordmark as the visual connection to the packaging.
-- Fonts are stored locally in `public/fonts` and loaded through `next/font/local`; visitors do not need a Google Fonts request. Both families include their SIL Open Font License files alongside the font files.
-- Sources: https://github.com/google/fonts/tree/main/ofl/fraunces and https://github.com/google/fonts/tree/main/ofl/dmsans
-- Type configuration is in `app/layout.tsx`; the brand typography block at the end of `app/globals.css` controls hierarchy, weight, tracking, and mobile sizing.
+- Display: Fraunces variable roman and true italic for headings.
+- Body and interface: DM Sans variable roman for descriptions, navigation and links.
+- The header/footer use the original supplied logo artwork, not recreated lettering.
+- Fonts are local in `public/fonts`, loaded by `next/font/local`. Both families include their SIL Open Font License files. No Google Fonts request is needed.
+- Font loading is in `app/layout.tsx`; size, hierarchy and responsive styles are in `app/globals.css`.
 
-Verified brew and checkout headline wrapping at 390px and desktop brew layout. ESLint and the webpack production build passed.
+Sources: [Fraunces](https://github.com/google/fonts/tree/main/ofl/fraunces) and [DM Sans](https://github.com/google/fonts/tree/main/ofl/dmsans).

@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Phin & Foam
 
-## Getting Started
+A small marketing website for Son and Tina’s Vietnamese coffee in North Austin. It includes the next coffee pickup, pop-up announcements, event/catering inquiries, and an introduction to the founders.
 
-First, run the development server:
+## Local development
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Check and build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run lint
+npm run build
+npm start
+```
 
-## Learn More
+The homepage is statically rendered. No environment variables, database, email service, or accounts are required. Deploy with the standard Next.js configuration on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+## Editing the website
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.tsx`: homepage copy and sections
+- `lib/content.ts`: next pickup announcement, contact links, and prefilled event inquiry email
+- `app/components/brand.tsx`: shared header, footer, and phin illustration
+- `app/globals.css`: colors, typography, layout, and responsive styles
+- `public/images/`: original logo and two optimized founder photos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Keep the original playful English brand voice: “Slow drip. Big mood.” Do not add Vietnamese phrases. Avoid invented family stories or claims about ingredients.
 
-## Deploy on Vercel
+Ordering, payments, pickup reservations, customer accounts, admin tools, APIs, cron jobs, and service integrations have been removed. Previously provisioned external service resources are not managed by this website.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Updating announcements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit `nextDrop` in `lib/content.ts` when announcing a pickup. Keep the date, year, hours, and public area current; never publish a home address. Pop-up dates are unannounced until confirmed. Event inquiries use a prefilled email, not a booking form or confirmed reservation. Photo exports are WebP with metadata removed; originals remain outside the repository.

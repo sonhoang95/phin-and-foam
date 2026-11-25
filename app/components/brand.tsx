@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { shop } from "@/lib/content";
 export function Phin({ className = "" }: { className?: string }) {
   return (
@@ -19,26 +20,35 @@ export function Phin({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-export function Header({ active }: { active: "brew" | "checkout" }) {
+function BrandLogo() {
+  return (
+    <Link href="/" className="brand-logo" aria-label="Phin and Foam home">
+      <span className="brand-logo-frame">
+        <Image
+          src="/images/brand/official-logo.png"
+          alt="Phin & Foam Vietnamese Coffee"
+          width={1448}
+          height={1086}
+          sizes="(max-width: 700px) 108px, 124px"
+        />
+      </span>
+    </Link>
+  );
+}
+
+export function Header() {
   return (
     <>
       <div className="announcement">
-        VIETNAMESE ROOTS. AUSTIN SOUL. <span>GOOD COFFEE STARTS HERE.</span>
+        SMALL-BATCH COFFEE · NORTH AUSTIN{" "}
+        <span>VIETNAMESE ROOTS. AUSTIN SOUL.</span>
       </div>
       <header className="header">
-        <Link href="/" className="wordmark" aria-label="Phin and Foam home">
-          PHIN<span>&</span>FOAM<small>VIETNAMESE COFFEE</small>
-        </Link>
+        <BrandLogo />
         <nav aria-label="Main navigation">
-          <Link className={active === "brew" ? "active" : ""} href="/brew">
-            The brew guide
-          </Link>
-          <Link
-            className={active === "checkout" ? "active" : ""}
-            href="/checkout"
-          >
-            First Pour Kit <span aria-hidden="true">↗</span>
-          </Link>
+          <Link href="/#upcoming">Find us</Link>
+          <Link href="/#contact">Book an event</Link>
+          <Link href="/#about">Meet us</Link>
         </nav>
         <a
           className="instagram-nav"
@@ -57,23 +67,31 @@ export function Footer() {
   return (
     <footer>
       <div className="footer-top">
-        <Link href="/" className="wordmark">
-          PHIN<span>&</span>FOAM<small>VIETNAMESE COFFEE</small>
-        </Link>
+        <BrandLogo />
         <p>
           Same roots,
           <br />
           <em>a little bit more foam.</em>
         </p>
-        <a href={shop.instagram} target="_blank" rel="noreferrer">
-          Say hello on Instagram ↗<br />
-          <small>@phinandfoam</small>
-        </a>
+        <div className="footer-socials">
+          <span>Good coffee. Better company.</span>
+          <nav aria-label="Social profiles">
+            <a href={shop.instagram} target="_blank" rel="noreferrer">
+              Instagram ↗
+            </a>
+            <a href={shop.tiktok} target="_blank" rel="noreferrer">
+              TikTok ↗
+            </a>
+            <a href={shop.facebook} target="_blank" rel="noreferrer">
+              Facebook ↗
+            </a>
+          </nav>
+        </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Phin & Foam Coffee LLC</span>
         <span>SMALL BATCH · AUSTIN, TX</span>
-        <Link href="/brew">Slow brew. Drink strong.</Link>
+        <a href={`mailto:${shop.contactEmail}`}>{shop.contactEmail}</a>
       </div>
     </footer>
   );

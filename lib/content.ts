@@ -1,16 +1,19 @@
-// Update launch details here. Checkout stays closed until commerce is connected.
 export const shop = {
-  price: 39,
-  batchSize: 30,
-  availability: 'coming-soon' as 'coming-soon' | 'sold-out',
-  instagram: 'https://www.instagram.com/phinandfoam/',
-  pickup: { date: 'Date to be announced', area: 'North Austin · exact location coming soon', time: 'Pickup window coming soon' },
-  video: '' as string,
-  videoCaptions: '' as string,
-  contactEmail: 'phinandfoam@gmail.com' as string,
+  instagram: "https://www.instagram.com/phinandfoam/",
+  facebook: "https://www.facebook.com/profile.php?id=61595317752229",
+  tiktok: "https://www.tiktok.com/@phinandfoam",
+  contactEmail: "phinandfoam@gmail.com",
 };
-export const recipes = [
-  { id: 'classic', number: '01', name: 'The classic iced coffee', vietnamese: 'Cà phê sữa đá', note: 'Bold coffee. Sweet milk. A whole lot of ice.', tone: 'classic', ingredients: ['House Blend coffee', 'Sweetened condensed milk', 'Hot water + ice'], steps: ['Spoon condensed milk into your glass.', 'Brew your coffee with a phin directly over the milk.', 'Stir, pour over ice, and make it your moment.'] },
-  { id: 'salted', number: '02', name: 'A little salty, a little sweet', vietnamese: 'Cà phê muối', note: 'Your bold brew, under a cloud of salted cream.', tone: 'salted', ingredients: ['Phin-brewed House Blend', 'Cream + a pinch of salt', 'Condensed milk + ice'], steps: ['Brew your coffee and sweeten to taste.', 'Whisk the cream with a little salt until softly thickened.', 'Pour coffee over ice and float the salted cream on top.'] },
-  { id: 'coconut', number: '03', name: 'Your coconut escape', vietnamese: 'Cà phê cốt dừa', note: 'Creamy, coconutty, and made for slow afternoons.', tone: 'coconut', ingredients: ['Phin-brewed House Blend', 'Coconut milk', 'Condensed milk + ice'], steps: ['Brew a bold cup of coffee and let it cool.', 'Blend coconut milk, condensed milk, and ice.', 'Spoon into a glass and pour the coffee over the top.'] },
-];
+
+// Public announcement only. Keep home addresses off the website.
+export const nextDrop = {
+  dateTime: "2026-12-05",
+  date: "Saturday, December 5",
+  year: "2026",
+  hours: "10 AM – 3 PM",
+  location: "North Austin · 78728",
+  orderingNote:
+    "Ordering details are coming soon. Follow us on Instagram for the announcement.",
+};
+
+export const eventInquiry = `mailto:${shop.contactEmail}?subject=${encodeURIComponent("Let’s bring Phin & Foam to our event")}&body=${encodeURIComponent("Hi Son & Tina!\n\nI’d love to have Phin & Foam at our event.\n\nName:\nEvent type:\nDate and time:\nLocation:\nEstimated guest count:\nAnything else you’d like us to know:\n")}`;
