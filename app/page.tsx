@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Footer, Header, Phin } from "./components/brand";
-import { eventInquiry, nextDrop, shop } from "@/lib/content";
+import Link from "next/link";
+import { nextDrop, shop } from "@/lib/content";
 
 export const metadata = {
   title: "Phin & Foam | Coffee Drops, Pop-Ups & Catering in Austin",
@@ -114,7 +115,7 @@ export default function Home() {
                 one coffee stop at a time. Confirmed dates will land here. Have
                 a local shop, market, or community gathering in mind? Say hi.
               </p>
-              <a className="text-link" href="#contact">
+              <a className="text-link" href="/inquire">
                 Let’s pop up together ↗
               </a>
             </article>
@@ -152,7 +153,7 @@ export default function Home() {
                   break—tell us what you’re planning in Austin or nearby. You’ll
                   talk directly with us, Son and Tina, about what fits.
                 </p>
-                <a className="button" href="#contact">
+                <a className="button" href="/inquire">
                   Ask about your event <span>↗</span>
                 </a>
               </div>
@@ -200,29 +201,22 @@ export default function Home() {
                   detail figured out—we’ll work through it with you.
                 </p>
                 <p className="contact-signoff">
-                  You’re emailing Son & Tina. That’s us in the aprons.
+                  Your inquiry goes straight to Son & Tina. That’s us in the
+                  aprons.
                 </p>
               </div>
               <div className="contact-details">
-                <h3>Here’s how to reach us</h3>
-                <a
-                  className="contact-email"
-                  href={`mailto:${shop.contactEmail}`}
-                >
-                  {shop.contactEmail}
-                </a>
-                <p>Include whatever you know so far:</p>
-                <ul>
-                  <li>Your event date & time</li>
-                  <li>Where you’re gathering</li>
-                  <li>The occasion & estimated guest count</li>
-                </ul>
-                <a className="button" href={eventInquiry}>
-                  Email Son & Tina <span>↗</span>
-                </a>
+                <h3>Let’s hear what you’re planning.</h3>
+                <p>
+                  Share your date, location, and a few details about your
+                  people. We’ll get back to you to talk coffee.
+                </p>
+                <Link className="button" href="/inquire">
+                  Tell us about your event <span>↗</span>
+                </Link>
                 <p className="contact-help">
-                  Opens a ready-to-fill email in your mail app. We’ll confirm
-                  availability and details together before anything is booked.
+                  A quick inquiry, no commitment. Your date is confirmed only
+                  after we’ve worked out the details together.
                 </p>
               </div>
             </section>

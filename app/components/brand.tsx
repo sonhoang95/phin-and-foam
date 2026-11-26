@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { shop } from "@/lib/content";
+import { HeaderNavigation } from "./header-navigation";
 export function Phin({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -45,20 +46,7 @@ export function Header() {
       </div>
       <header className="header">
         <BrandLogo />
-        <nav aria-label="Main navigation">
-          <Link href="/#upcoming">Find us</Link>
-          <Link href="/#contact">Book an event</Link>
-          <Link href="/#about">Meet us</Link>
-        </nav>
-        <a
-          className="instagram-nav"
-          href={shop.instagram}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Phin and Foam on Instagram"
-        >
-          ◎
-        </a>
+        <HeaderNavigation />
       </header>
     </>
   );
